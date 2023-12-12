@@ -61,7 +61,7 @@ export default class App extends React.Component {
         <div className="todoList">
           <h2>⬇️🌟 L I S T 🌠⬇️</h2>
 
-          {this.state.todoList.map((e, i) => {
+          {this.state.todoList.length == 0 ? (<h1>List is Empty</h1>) : (this.state.todoList.map((e, i) => {
             return (
               <Todoitem
                 e={e}
@@ -70,7 +70,7 @@ export default class App extends React.Component {
                 updateItem={this.updateItem}
               />
             );
-          })}
+          })) }
         </div>
       </>
     );
